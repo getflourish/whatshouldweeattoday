@@ -1,0 +1,132 @@
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0 auto;
+	background: rgba(193, 89, 73, 1);
+	color: #edebd8;
+	font-family: "bree-serif", "Georgia", "Times New Roman", serif;
+	font-weight: 200 !important;
+	font-style: normal !important;
+	-webkit-font-smoothing: antialiased;
+}
+
+#wrap {
+	width: 960px;
+	padding: 20px;
+	margin: 50px auto;
+	text-align: center;
+}
+
+h1 {
+	font-family: "bree-serif", "Georgia", "Times New Roman", serif !important;
+	font-size: 60px;	
+	font-weight: 200 !important;
+	font-style: normal !important;
+	text-align: center;
+
+}
+
+input {
+	width: 200px !important;
+	border-radius: 0 !important;
+	margin-right: 5px;
+}
+
+ul {
+	margin-top: 20px;
+}
+
+li {
+	list-style-type: none;
+	margin-top: 20px;
+	font-weight: 400;
+	position: relative;
+}
+
+li:hover .remove {
+	opacity: 0.8;
+}
+
+li a {
+	color: #edebd8;
+	font-size: 20px;
+}
+
+li a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.remove {
+	position: absolute;
+	opacity: 0;
+	margin-left: 10px;
+}
+
+.remove:hover {
+	opacity: 1;
+}
+
+#form {
+	font-family: "Helvetica Neue";
+	margin-top: 20px;
+}
+
+.type {
+	font-size: 14px;
+	font-weight: 300;
+}
+
+.illustration {
+	cursor: pointer;
+	margin-bottom: 40px;
+}
+
+.illustration:hover .mustache {
+	-moz-animation-name: mustache;
+	-moz-animation-duration: 2s;
+	-moz-animation-iteration-count: 1;
+	-webkit-animation-name: mustache;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+}
+.mustache {
+	-moz-animation-name: mustache;
+	-moz-animation-duration: 2s;
+	-moz-animation-iteration-count: 1;
+	-webkit-animation-name: mustache;
+	-webkit-animation-duration: 2s;
+	
+
+}
+
+@-webkit-keyframes mustache {
+	0% {
+		-webkit-transform:rotate(0deg) translate(0px, 0px);	
+
+	}
+	25% {
+		-webkit-transform:rotate(14deg) translate(0px, -5px);
+
+	}
+	50% {
+		-webkit-transform: translate(0px, -5px) rotate(-7deg);
+		
+	}
+	75% {
+		-webkit-transform: translate(0px, -5px) rotate(7deg);
+		
+	}
+	100% {
+		-webkit-transform: translate(0px, 0px) rotate(0deg);
+	}
+}
+
+.btn-warning {
+	background: #ed9c28;
+	border-radius: 0 !important;
+}
