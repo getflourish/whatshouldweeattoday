@@ -20,8 +20,8 @@ app.controller('AppController', function($http, $scope, $rootScope, $timeout) {
 		$scope.newurl = "";
 	}
 
-	$scope.downvote = function (index) {
-		$scope.data[index].archived = true;
+	$scope.downvote = function (item) {
+		item.archived = true;
 		$scope.save();
 	}
 
@@ -36,13 +36,13 @@ app.controller('AppController', function($http, $scope, $rootScope, $timeout) {
 		});
 	}
 
-	$scope.remove = function (index) {
-		$scope.data.splice(index, 1);
+	$scope.remove = function (item) {
+		$scope.data.splice($scope.data.indexOf(item),1);
 		$scope.save();
 	}
 
-	$scope.upvote = function (index) {
-		$scope.data[index].archived = false;
+	$scope.upvote = function (item) {
+		item.archived = false;
 		$scope.save();
 	}
 
