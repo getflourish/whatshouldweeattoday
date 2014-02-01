@@ -2,7 +2,7 @@
 <html ng-app="app">
 <head>
 	<meta charset="utf-8">	
-	<title></title>
+	<title>What should we eat today?</title>
 	<script type="text/javascript" src="js/angular.js"></script>
 	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.js"></script>
@@ -29,23 +29,27 @@
 	<h1>What should we<br> eat today?</h1>
 	<h1>—</h1>
 
-	<ul id="foo" ui-sortable ng-model="data">
-		<li ng-hide="food.archived" ng-repeat="food in data"><a href="{{food.url}}">{{food.name}}</a><a href="" class="remove" ng-click="downvote($index)">×</a><br><span class="type">{{food.type}}</span>
+	<ul id="foo">
+		<li ng-hide="food.archived" ng-repeat="food in data"><a href="{{food.url}}">{{food.name}}</a><a href="" class="remove" ng-click="downvote($index)"><img src="arrow-down.svg" width="20px"><span>Schmeckt nicht</span></a><br><span class="type">{{food.type}}</span>
 			
 		</li>
 	</ul>
 
-	<h1>—</h1>
-	<h4>Schmeckt nicht</h4>
+	<h2>— Schmeckt nicht —</h2>
 
-	<ul id="foo" ui-sortable ng-model="data">
-		<li ng-show="food.archived" ng-repeat="food in data"><a href="{{food.url}}">{{food.name}}</a><a href="" class="remove" ng-click="remove($index)">×</a>	<br><span class="type">({{food.type}})</span>
+	<ul id="foo">
+		<li ng-show="food.archived" ng-repeat="food in data"><a href="{{food.url}}">{{food.name}}</a>
+			<a href="" class="remove" ng-click="upvote($index)"><img src="arrow-up.svg" width="20px">
+			</a>
+			<a href="" class="remove pad" ng-click="remove($index)"><img src="delete.svg" width="20px">
+				<span>Weg damit</span>
+			</a>
+			<br><span class="type">({{food.type}})</span>
 			
 		</li>
 	</ul>
 
-	<h1>—</h1>
-	<h4>Lieferdienst hinzufügen</h4>
+	<h2>— Lieferdienst hinzufügen —</h2>
 	<div id="form" class="form-group form-inline">
 		<input id="nameInput" class="form-control" type="text" placeholder="Wie heißt der Lieferdienst?" ng-model="newfood"/>
 		<input id="typeInput" class="form-control" type="text" placeholder="Was kann man da essen?" ng-model="newtype"/>
@@ -55,8 +59,11 @@
 </div>
 
 <footer>
-	<span>Illustration<a href="http://thenounproject.com/term/chef/6795/">Chef</a> von Polina Flegontovna auf <a href="">NounProject</a></span>
+	<span>Illustration <a href="http://thenounproject.com/term/chef/6795/">Chef</a> von Polina Flegontovna auf <a href="">NounProject</a></span>
+	<br>
 	<span>Schrift <a href="http://www.type-together.com/Bree">Bree</a> von TypeTogether</span>
+	<br>
+	<span>Design & Code: <a href="www.florianschulz.info">Florian Schulz</a></span>
 </footer>
 </body>
 </html>

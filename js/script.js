@@ -10,16 +10,18 @@ app.controller('AppController', function($http, $scope, $rootScope, $timeout) {
 		var f = {
 			"name":$scope.newfood,
 			"type":$scope.newtype,
-			"url":$scope.newurl
+			"url":$scope.newurl,
+			"archived":false
 		}
 		$scope.data.push(f);
 		$scope.save();
+		$scope.newfood = "";
+		$scope.newtype = "";
+		$scope.newurl = "";
 	}
 
 	$scope.downvote = function (index) {
-		if(confirm('War das essen wirklich so schlecht?')) {
-			$scope.data[index].archived = true;
-		}
+		$scope.data[index].archived = true;
 		$scope.save();
 	}
 
@@ -35,9 +37,12 @@ app.controller('AppController', function($http, $scope, $rootScope, $timeout) {
 	}
 
 	$scope.remove = function (index) {
-		if(confirm('Doch wieder nach oben?')) {
-			$scope.data[index].archived = false;
-		}
+		$scope.data.splice(index, 1);
+		$scope.save();
+	}
+
+	$scope.upvote = function (index) {
+		$scope.data[index].archived = false;
 		$scope.save();
 	}
 
