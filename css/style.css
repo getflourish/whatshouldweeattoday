@@ -18,8 +18,7 @@ body {
 	-webkit-box-sizing: border-box;
 }
 
-#wrap {
-	
+#wrap {	
 	padding: 20px;
 	margin: 50px auto;
 	text-align: center;
@@ -352,3 +351,11 @@ button {
 	margin-right: 8px;
 }
 
+
+#services {
+	margin: 100px;
+	padding: 20px;
+background: #edebd8;
+color: #666;
+}
+	

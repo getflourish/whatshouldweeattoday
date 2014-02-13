@@ -9,6 +9,11 @@
 	<script type="text/javascript" src="js/ui-sortable.js"></script>
 	<script type="text/javascript" src="js/keymaster.min.js"></script>
 
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
+
+
 	<script type="text/javascript" src="js/script.js"></script>
 
 	<script type="text/javascript" src="//use.typekit.net/wpp1tda.js"></script>
@@ -60,7 +65,7 @@
 	</div>
 	<a ng-hide="votemode" class="solid" href="" ng-click="showServices()">Liste aller Lieferservices anzeigen</a>
 	<span>{{message}}</span>
-	<div ng-show="viewServices">
+	<div ng-show="viewServices" id="services">
 		<h1 ng-show="votemode">Okay {{yourname}}, <br>worauf hast du Lust?</h1>
 		<h2>— Schmeckt gut —</h2>
 		<ul id="foo">

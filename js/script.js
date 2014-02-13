@@ -1,6 +1,6 @@
-var app = angular.module('app', ['ui.sortable']);
+var app = angular.module('app', ['ui.sortable', 'firebase']);
 
-app.controller('AppController', function($http, $scope, $rootScope, $timeout) {
+app.controller('AppController', function($http, $scope, $rootScope, $timeout, $firebase) {
 
 	// load some data
 
