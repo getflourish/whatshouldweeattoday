@@ -69,14 +69,14 @@
 		<h1 ng-show="votemode">Okay {{yourname}}, <br>worauf hast du Lust?</h1>
 		<h2>— Schmeckt gut —</h2>
 		<ul id="foo">
-			<li ng-hide="food.archived" ng-repeat="(id, food) in services | orderBy:'name' | orderByPriority">{{id}}<span ng-show="food.votes.length > 0" class="badge">{{food.votes.length}}</span><a ng-hide="yourname" href="{{food.url}}">{{food.name}}</a><a ng-show="yourname" ng-click="vote(id)">{{food.name}}</a>
-				<a ng-hide="yourname" href="" class="remove" ng-click="downvote(food)"><img src="arrow-down.svg" width="20px"><span>Schmeckt nicht gut</span></a>
-				<a ng-show="yourname" href="" class="remove plus" ng-click="vote(food)">+1<span>Ja, darauf habe ich Lust!</span></a>
+			<li ng-hide="service.archived" ng-repeat="(id, service) in services | orderBy:'name' | orderByPriority">{{id}}<span ng-show="service.votes.length > 0" class="badge">{{service.votes.length}}</span><a ng-hide="yourname" href="{{service.url}}">{{service.name}}</a><a ng-show="yourname" ng-click="vote(id)">{{service.name}}</a>
+				<a ng-hide="yourname" href="" class="remove" ng-click="downvote(service)"><img src="arrow-down.svg" width="20px"><span>Schmeckt nicht gut</span></a>
+				<a ng-show="yourname" href="" class="remove plus" ng-click="vote(id)">+1<span>Ja, darauf habe ich Lust!</span></a>
 				<br>
 
-				<span class="type">{{food.type}}</span>
+				<span class="type">{{service.type}}</span>
 				<br>
-    	  		<span ng-show="yourname" ng-repeat="name in food.votes">{{name.name}}<span ng-hide="$last">, </span></span>
+    	  		<span ng-show="yourname" ng-repeat="name in service.votes">{{name.name}}<span ng-hide="$last">, </span></span>
 
 			</li>
 		</ul>
@@ -89,13 +89,13 @@
 		<h2>— Schmeckt nicht gut —</h2>
 
 		<ul id="foo">
-			<li ng-show="food.archived" ng-repeat="food in services"><a href="{{food.url}}">{{food.name}}</a>
+			<li ng-show="service.archived" ng-repeat="service in services"><a href="{{service.url}}">{{service.name}}</a>
 				<a href="" class="remove" ng-click="upvote(id)"><img src="arrow-up.svg" width="20px">
 				</a>
-				<a href="" class="remove pad" ng-click="remove(food)"><img src="delete.svg" width="20px">
+				<a href="" class="remove pad" ng-click="remove(service)"><img src="delete.svg" width="20px">
 					<span>Weg damit</span>
 				</a>
-				<br><span class="type">({{food.type}})</span>
+				<br><span class="type">({{service.type}})</span>
 
 			</li>
 		</ul>

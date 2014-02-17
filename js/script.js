@@ -143,18 +143,27 @@ app.controller('AppController', function($http, $scope, $rootScope, $timeout, $f
 
     $scope.vote = function(id) {
 
-        var dataRef = new Firebase('https://wswet.firebaseio.com/services/' + id + '/votes');
-        var s = $firebase(dataRef);
+        var votes = $scope.services.$child(id + "/votes")
+
 
         // loop through service votes to check if user already voted
-        var keys = s.$getIndex();
-        keys.forEach(function(key, i) {
-            if (s[key] === $scope.yourname) {
-                console.log("already in")
-            } else {
-                s.$add($scope.yourname);
-            }
-        });
+        var keys = votes.$getIndex();
+
+        if (keys.length == 0) {
+            votes.$add($scope.yourname);
+        } else {
+            keys.forEach(function(key, i) {
+                var name = votes.$child(keys[i]);
+                console.log(name.$getIndex())
+                console.log(name)
+                if (name.$value === $scope.yourname) {
+                    console.log("already in")
+                } else {
+                    console.log("adding")
+                    // votes.$add($scope.yourname);
+                }
+            });
+        }
 
     }
 
