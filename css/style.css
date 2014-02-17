@@ -18,7 +18,7 @@ body {
 	-webkit-box-sizing: border-box;
 }
 
-#wrap {	
+#wrap {
 	padding: 20px;
 	margin: 50px auto;
 	text-align: center;
@@ -31,7 +31,7 @@ h1, h2, h4 {
 	text-align: center;
 }
 h1 {
-	font-size: 60px;	
+	font-size: 60px;
 	font-weight: 600;
 	font-weight: bold;
 
@@ -103,12 +103,12 @@ li:hover .remove {
 }
 
 li a {
-	color: #edebd8;
+	color: #666;
 	font-size: 20px;
 }
 
 li a:hover {
-	color: #fff;
+	color: #292929;
 	text-decoration: none;
 }
 
@@ -169,13 +169,13 @@ li a:hover {
 	-moz-animation-duration: 2s;
 	-webkit-animation-name: mustache;
 	-webkit-animation-duration: 2s;
-	
+
 
 }
 
 @-webkit-keyframes mustache {
 	0% {
-		-webkit-transform:rotate(0deg) translate(0px, 0px);	
+		-webkit-transform:rotate(0deg) translate(0px, 0px);
 
 	}
 	25% {
@@ -184,11 +184,11 @@ li a:hover {
 	}
 	50% {
 		-webkit-transform: translate(0px, -5px) rotate(-7deg);
-		
+
 	}
 	75% {
 		-webkit-transform: translate(0px, -5px) rotate(7deg);
-		
+
 	}
 	100% {
 		-webkit-transform: translate(0px, 0px) rotate(0deg);
@@ -197,7 +197,7 @@ li a:hover {
 
 @keyframes mustache {
 	0% {
-		transform:rotate(0deg) translate(0px, 0px);	
+		transform:rotate(0deg) translate(0px, 0px);
 
 	}
 	25% {
@@ -206,11 +206,11 @@ li a:hover {
 	}
 	50% {
 		transform: translate(0px, -5px) rotate(-7deg);
-		
+
 	}
 	75% {
 		transform: translate(0px, -5px) rotate(7deg);
-		
+
 	}
 	100% {
 		transform: translate(0px, 0px) rotate(0deg);
@@ -240,7 +240,7 @@ a {
 
 a:hover {
 	color: #fff;
-	text-decoration: none;	
+	text-decoration: none;
 }
 
 
@@ -257,7 +257,7 @@ a:hover {
 	font-size: 14px;
 	line-height: 14px;
 	margin-right: 5px;
-	
+
 }
 
 .badge:before {
@@ -274,7 +274,7 @@ a:hover {
 .big {
 	font-size: 20px;
 	height: 48px;
-	
+
 	width: 300px !important;
 	margin: 0 auto;
 }
@@ -358,4 +358,4 @@ button {
 background: #edebd8;
 color: #666;
 }
-	
+
